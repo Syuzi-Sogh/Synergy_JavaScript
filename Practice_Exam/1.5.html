@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="myButton">Save</button>
+<script>
+  input = ["Something new"];
+  localStorage[0] = input;
+  const button = document.getElementById('myButton');
+  let isClicked = false;
+
+  button.addEventListener('click', function()
+  {
+    if (!isClicked)
+    {
+      setTimeout(function()
+      {
+        console.log(localStorage[0]);
+      }, 2000);
+      isClicked = true;
+    }
+  })
+
+</script>
+</body>
+</html>

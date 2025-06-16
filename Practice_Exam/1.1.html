@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body id="main">
+<script>
+  function loadNewScript(src, callback)
+  {
+    let script = document.createElement('script');
+    script.src = src;
+
+    script.onload = () => callback(null, script);
+    script.onerror = () => callback(new Error(`Script download error! ${src}`));
+
+    document.head.append(script);
+  }
+
+  loadNewScript('1.1.js', function (error, script)
+  {
+    if (error)
+    {
+      alert(error);
+    }
+    else
+    {
+      createDiv()
+    }
+  })
+</script>
+</body>
+</html>
